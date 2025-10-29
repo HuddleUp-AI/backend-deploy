@@ -10,16 +10,17 @@ This repository contains everything needed to deploy PaletAI Backend to a new Az
 
 ## 📁 Repository Contents
 
-| File | Purpose |
-|------|---------|
-| **main.bicep** | Azure infrastructure template (IaC) |
-| **Deploy-PaletAI.ps1** | Automated deployment script |
-| **MIGRATION-GUIDE.md** | Complete step-by-step migration guide |
-| **MIGRATION-CHECKLIST.md** | Day-of-migration execution checklist |
-| **QUICK-REFERENCE.md** | Common commands reference card |
-| **env-template.txt** | Environment variables reference |
-| **parameters.json** | Default deployment parameters |
-| **README.md** | This file |
+| File | Purpose | Audience |
+|------|---------|----------|
+| **PM-INTRODUCTION.md** | Non-technical overview & business case | 📋 Product Managers |
+| **MIGRATION-GUIDE.md** | Complete step-by-step migration guide | 🔧 DevOps Engineers |
+| **MIGRATION-CHECKLIST.md** | Day-of-migration execution checklist | 🔧 DevOps Engineers |
+| **Deploy-PaletAI.ps1** | Automated deployment script | 🔧 DevOps Engineers |
+| **main.bicep** | Azure infrastructure template (IaC) | 🔧 DevOps Engineers |
+| **QUICK-REFERENCE.md** | Common commands reference card | 🔧 DevOps Engineers |
+| **env-template.txt** | Environment variables reference | 🔧 DevOps Engineers |
+| **parameters.json** | Default deployment parameters | 🔧 DevOps Engineers |
+| **README.md** | Repository overview | 👥 Everyone |
 
 ## 🚀 Quick Start
 
@@ -62,10 +63,13 @@ cd backend-deploy
 
 ## 📖 Documentation
 
-### Getting Started
+### For Product Managers
+- **[PM-INTRODUCTION.md](PM-INTRODUCTION.md)** - 📋 **Non-technical overview** - Business value, timeline, risks, stakeholder communication
+
+### Getting Started (Technical)
 1. **[README.md](README.md)** - Quick overview and deployment scenarios
-2. **[MIGRATION-GUIDE.md](MIGRATION-GUIDE.md)** - Comprehensive migration guide (START HERE)
-3. **[MIGRATION-CHECKLIST.md](MIGRATION-CHECKLIST.md)** - Day-of-migration checklist
+2. **[MIGRATION-GUIDE.md](MIGRATION-GUIDE.md)** - Comprehensive migration guide (START HERE for engineers)
+3. **[MIGRATION-CHECKLIST.md](MIGRATION-CHECKLIST.md)** - Day-of-migration execution checklist
 
 ### Reference
 - **[QUICK-REFERENCE.md](QUICK-REFERENCE.md)** - Command reference card

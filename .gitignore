@@ -1,0 +1,52 @@
+# Deployment outputs
+deployment-outputs-*.json
+*.log
+
+# Environment files with secrets
+.env
+.env.local
+.env.production
+*.env
+
+# Parameter files with real values
+parameters.local.json
+parameters.prod.json
+parameters-filled.json
+
+# Azure credentials
+*.publishsettings
+*.azureauth
+
+# PowerShell transcript logs
+*-transcript.txt
+
+# Backup files
+*.bak
+*.backup
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Temporary files
+temp/
+tmp/
+*.tmp
+
+# Archive files from testing
+*.zip
+*.tar.gz
+*.tar
+
+# Secrets and keys
+secrets.txt
+keys.txt
+credentials.json

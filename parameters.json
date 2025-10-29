@@ -1,0 +1,63 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "appName": {
+      "value": "paletai"
+    },
+    "location": {
+      "value": "westus3"
+    },
+    "environment": {
+      "value": "prod"
+    },
+    "appServicePlanSku": {
+      "value": "B1"
+    },
+    "gunicornWorkers": {
+      "value": 4
+    },
+    "gunicornTimeout": {
+      "value": 600
+    },
+    "mongoDbConnectionString": {
+      "value": "REPLACE_WITH_YOUR_MONGODB_CONNECTION_STRING"
+    },
+    "openAiApiKey": {
+      "value": ""
+    },
+    "openAiModel": {
+      "value": "gpt-4o"
+    },
+    "azureOpenAiEndpoint": {
+      "value": ""
+    },
+    "azureOpenAiApiKey": {
+      "value": ""
+    },
+    "azureOpenAiModel": {
+      "value": "gpt-4o"
+    },
+    "anthropicApiKey": {
+      "value": ""
+    },
+    "anthropicModel": {
+      "value": "claude-3-5-sonnet-20241022"
+    },
+    "aiProvider": {
+      "value": "openai"
+    },
+    "oneSignalAppId": {
+      "value": ""
+    },
+    "oneSignalRestApiKey": {
+      "value": ""
+    },
+    "enableStreaming": {
+      "value": false
+    },
+    "dailyPromptLimit": {
+      "value": 20
+    }
+  }
+}

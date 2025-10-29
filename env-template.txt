@@ -1,0 +1,111 @@
+# PaletAI Backend - Environment Variables Template
+# Copy this file and fill in your actual values
+# DO NOT commit filled values to git!
+
+# ============================================================================
+# DATABASE CONFIGURATION (REQUIRED)
+# ============================================================================
+
+# MongoDB connection string
+# Format: mongodb://[username:password@]host[:port][/database][?options]
+# Example: mongodb://user:pass@cluster.mongodb.net:27017/paletai?retryWrites=true&w=majority
+DB_PATH=mongodb://localhost:27017/paletai
+
+# ============================================================================
+# AI PROVIDER CONFIGURATION (AT LEAST ONE REQUIRED)
+# ============================================================================
+
+# OpenAI Configuration
+OPENAI_API_KEY=                           # Your OpenAI API key (starts with sk-)
+OPENAI_MODEL=gpt-4o                       # Model name: gpt-4o, gpt-4-turbo, gpt-3.5-turbo
+
+# Azure OpenAI Configuration
+AZURE_OPENAI_ENDPOINT=                    # e.g., https://your-resource.openai.azure.com/
+AZURE_OPENAI_API_KEY=                     # Your Azure OpenAI API key
+AZURE_OPENAI_MODEL=gpt-4o                 # Your deployment name in Azure
+
+# Anthropic Configuration
+ANTHROPIC_API_KEY=                        # Your Anthropic API key
+ANTHROPIC_MODEL=claude-3-5-sonnet-20241022 # Model name
+
+# AI Provider Selection (choose one)
+IS_ANTHROPIC_ENDPOINT=False               # True if using Anthropic
+IS_OPENAI_ENDPOINT=True                   # True if using OpenAI or Azure OpenAI
+IS_LOCAL_ENV=False                        # True for local dev, False for Azure (affects image storage)
+
+# ============================================================================
+# AI GENERATION SETTINGS
+# ============================================================================
+
+ENABLE_STREAMING=False                    # Enable streaming responses (experimental)
+STREAMING_THINKING_TOKENS=16000           # Token allocation for streaming mode
+DAILY_PROMPT_LIMIT=20                     # Max prompts per user per day
+
+# ============================================================================
+# AZURE BLOB STORAGE (REQUIRED FOR PRODUCTION)
+# ============================================================================
+
+# Azure Storage Connection String (auto-configured if deployed via Bicep)
+AZURE_STORAGE_CONNECTION_STRING=DefaultEndpointsProtocol=https;AccountName=youraccountname;AccountKey=yourkey;EndpointSuffix=core.windows.net
+AZURE_STORAGE_CONTAINER=game-images       # Container name for game images
+
+# ============================================================================
+# PUSH NOTIFICATIONS (OPTIONAL)
+# ============================================================================
+
+# OneSignal Configuration
+ONESIGNAL_APP_ID=                         # Your OneSignal App ID
+ONESIGNAL_REST_API_KEY=                   # Your OneSignal REST API Key
+ONESIGNAL_API_URL=https://api.onesignal.com # OneSignal API endpoint
+
+# ============================================================================
+# APPLICATION INSIGHTS (OPTIONAL - Auto-configured if deployed via Bicep)
+# ============================================================================
+
+APPLICATIONINSIGHTS_CONNECTION_STRING=    # Auto-populated by Azure
+WEBSITE_HTTPLOGGING_RETENTION_DAYS=3      # Log retention days
+
+# ============================================================================
+# APPLICATION SETTINGS (OPTIONAL)
+# ============================================================================
+
+# Application name (for display purposes)
+APP_NAME=PaletAI API
+
+# ============================================================================
+# USAGE NOTES
+# ============================================================================
+
+# 1. MongoDB Connection String:
+#    - For MongoDB Atlas: Get from Atlas console → Connect → Connect your application
+#    - For local MongoDB: mongodb://localhost:27017/paletai
+#    - For Azure Cosmos DB: Get from Azure Portal → Cosmos DB → Connection String
+
+# 2. AI Provider Selection:
+#    - OpenAI: Set IS_OPENAI_ENDPOINT=True, provide OPENAI_API_KEY
+#    - Azure OpenAI: Set IS_OPENAI_ENDPOINT=True, provide AZURE_OPENAI_* values
+#    - Anthropic: Set IS_ANTHROPIC_ENDPOINT=True, provide ANTHROPIC_API_KEY
+
+# 3. Image Storage:
+#    - Local development: Set IS_LOCAL_ENV=True (images saved to static/ folder)
+#    - Azure production: Set IS_LOCAL_ENV=False (images uploaded to Blob Storage)
+
+# 4. Daily Prompt Limit:
+#    - Controls rate limiting per user
+#    - Recommended: 20 for free tier, 100+ for paid users
+
+# 5. OneSignal Setup:
+#    - Create account at https://onesignal.com
+#    - Create new app → Settings → Keys & IDs
+#    - Copy App ID and REST API Key
+
+# ============================================================================
+# SECURITY BEST PRACTICES
+# ============================================================================
+
+# - Never commit this file with real values to git
+# - Use Azure Key Vault for production secrets
+# - Rotate API keys regularly
+# - Use managed identities where possible
+# - Restrict MongoDB access to specific IPs
+# - Enable HTTPS only for all endpoints

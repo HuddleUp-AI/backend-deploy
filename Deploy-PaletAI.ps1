@@ -162,27 +162,27 @@ $ScriptDir = Split-Path -Parent $MyInvocation.MyCommand.Path
 # Color output functions
 function Write-Success {
     param([string]$Message)
-    Write-Host "✓ $Message" -ForegroundColor Green
+    Write-Host "[OK] $Message" -ForegroundColor Green
 }
 
 function Write-Info {
     param([string]$Message)
-    Write-Host "ℹ $Message" -ForegroundColor Cyan
+    Write-Host "[INFO] $Message" -ForegroundColor Cyan
 }
 
 function Write-Warning {
     param([string]$Message)
-    Write-Host "⚠ $Message" -ForegroundColor Yellow
+    Write-Host "[WARN] $Message" -ForegroundColor Yellow
 }
 
 function Write-Error {
     param([string]$Message)
-    Write-Host "✗ $Message" -ForegroundColor Red
+    Write-Host "[ERROR] $Message" -ForegroundColor Red
 }
 
 function Write-Step {
     param([string]$Message)
-    Write-Host "`n═══ $Message ═══" -ForegroundColor Magenta
+    Write-Host "`n=== $Message ===" -ForegroundColor Magenta
 }
 
 # Validate prerequisites

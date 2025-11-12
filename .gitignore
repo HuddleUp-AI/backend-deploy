@@ -50,3 +50,5 @@ tmp/
 secrets.txt
 keys.txt
 credentials.json
+CREDENTIALS-EXTRACTED.txt
+DEPLOY-NOW.ps1

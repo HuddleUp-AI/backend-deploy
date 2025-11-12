@@ -291,15 +291,6 @@ resource appService 'Microsoft.Web/sites@2024-04-01' = {
   }
 }
 
-// Enable SSH access to container
-resource webConfig 'Microsoft.Web/sites/config@2024-04-01' = {
-  parent: appService
-  name: 'web'
-  properties: {
-    sshEnabled: true
-  }
-}
-
 // Output values for reference
 output appServiceUrl string = 'https://${appService.properties.defaultHostName}'
 output appServiceName string = appService.name

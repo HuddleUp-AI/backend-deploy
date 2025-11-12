@@ -52,3 +52,4 @@ keys.txt
 credentials.json
 CREDENTIALS-EXTRACTED.txt
 DEPLOY-NOW.ps1
+FIX-AND-RETRY.ps1
